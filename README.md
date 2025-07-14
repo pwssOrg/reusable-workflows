@@ -58,4 +58,4 @@ Feel free to contribute improvements or report issues with this reusable workflo
 
 ## License
 
-See the [LICENSE](LICENSE) file for details.
+See the [LICENSE](https://github.com/pwssOrg/reusable-workflows/blob/main/LICENSE.md) file for details.
