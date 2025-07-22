@@ -62,7 +62,14 @@ jobs:
                         <enabled>true</enabled>
                       </snapshots>
                   </repository>
-                </repositories>
+                <repository>
+                 <id>github</id>
+                 <url>https://maven.pkg.github.com/pwssOrg/PWSS-DirectoryNav</url>
+                 <snapshots>
+                  <enabled>true</enabled>
+                </snapshots>
+              </repository>
+            </repositories>
           </profile>
         </profiles>
           <servers>
