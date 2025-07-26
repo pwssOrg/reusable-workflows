@@ -75,7 +75,7 @@ jobs:
           <servers>
             <server>
               <id>github</id>
-              <username>${{ secrets.secrets.USER_FOR_SNYK }}</username>
+              <username>${{ secrets.USER_FOR_SNYK }}</username>
               <password>${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}</password>
             </server>
           </servers>
