@@ -50,7 +50,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}
       run: echo "GITHUB_TOKEN is set to access private packages"
-
     - name: Setup Maven Settings
       run: |
         mkdir -p ~/.m2
