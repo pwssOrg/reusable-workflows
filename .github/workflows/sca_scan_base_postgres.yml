@@ -73,10 +73,11 @@ jobs:
                     <repository>
                       <id>github</id>
                       <url>https://maven.pkg.github.com/pwssOrg/literate-octo-guacamole</url>
-                      <snapshots>
-                        <enabled>true</enabled>
-                      </snapshots>
                   </repository>
+                   <repository>
+                      <id>github</id>
+                        <url>https://maven.pkg.github.com/pwssOrg/PWSS-DirectoryNav</url>
+                      </repository>
                 </repositories>
           </profile>
         </profiles>
