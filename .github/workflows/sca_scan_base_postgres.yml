@@ -15,6 +15,12 @@ on:
     secrets:
       SNYK_TOKEN:
         required: true
+      READ_PACKAGE_TOKEN_INPUT:
+        description: 'Ensure this is added if it is used for authentication'
+        required: true
+      USER_FOR_SNYK:
+        description: 'Ensure this is added if it is used for authentication'
+        required: true
 
 jobs:
   snyk-action:
@@ -48,7 +54,7 @@ jobs:
 
     - name: Set up environment variables for accessing the private GitHub package repository
       env:
-        GITHUB_TOKEN: ${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}
+        GITHUB_TOKEN: ${{ secrets.READ_PACKAGE_TOKEN_INPUT }}
       run: echo "GITHUB_TOKEN is set to access private packages"
     - name: Setup Maven Settings
       run: |
@@ -84,7 +90,7 @@ jobs:
             <server>
               <id>github</id>
               <username>${{ secrets.USER_FOR_SNYK }}</username>
-              <password>${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}</password>
+              <password>${{ secrets.READ_PACKAGE_TOKEN_INPUT}}</password>
             </server>
           </servers>
         </settings>
