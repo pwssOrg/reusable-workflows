@@ -72,14 +72,14 @@ jobs:
                         <url>https://repo.maven.apache.org/maven2</url>
                       </repository>
                     <repository>
-                      <id>github</id>
+                      <id>github1</id>
                       <url>https://maven.pkg.github.com/pwssOrg/literate-octo-guacamole</url>
                       <snapshots>
                         <enabled>true</enabled>
                       </snapshots>
                   </repository>
                 <repository>
-                 <id>github</id>
+                 <id>github2</id>
                  <url>https://maven.pkg.github.com/pwssOrg/PWSS-DirectoryNav</url>
                  <snapshots>
                   <enabled>true</enabled>
