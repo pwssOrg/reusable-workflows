@@ -51,7 +51,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}
       run: echo "GITHUB_TOKEN is set to access private packages"
 
-    
     - name: Setup Maven Settings
       run: |
         mkdir -p ~/.m2
@@ -72,26 +71,26 @@ jobs:
                         <url>https://repo.maven.apache.org/maven2</url>
                       </repository>
                     <repository>
-                      <id>github1</id>
+                      <id>github</id>
                       <url>https://maven.pkg.github.com/pwssOrg/literate-octo-guacamole</url>
                       <snapshots>
                         <enabled>true</enabled>
                       </snapshots>
                   </repository>
-                <repository>
-                 <id>github2</id>
-                 <url>https://maven.pkg.github.com/pwssOrg/PWSS-DirectoryNav</url>
-                 <snapshots>
-                  <enabled>true</enabled>
-                </snapshots>
-              </repository>
-            </repositories>
+                   <repository>
+                      <id>github</id>
+                      <url>https://maven.pkg.github.com/pwssOrg/PWSS-DirectoryNav</url>
+                      <snapshots>
+                        <enabled>true</enabled>
+                      </snapshots>
+                  </repository>
+                </repositories>
           </profile>
         </profiles>
           <servers>
             <server>
               <id>github</id>
-              <username>${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}</username>
+              <username>${{ secrets.USER_FOR_SNYK }}</username>
               <password>${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}</password>
             </server>
           </servers>
