@@ -103,6 +103,8 @@ jobs:
 
     - name: Build the project
       working-directory: ${{ inputs.working-path }}
+      env:
+          SPRING_PROFILES_ACTIVE: build
       run: mvn clean install
 
     - name: Setup Snyk
