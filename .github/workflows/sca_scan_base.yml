@@ -69,6 +69,13 @@ jobs:
                   <enabled>true</enabled>
                 </snapshots>
               </repository>
+              <repository>
+              <id>github</id>
+             <url>https://https://maven.pkg.github.com/pwssOrg/PWSS-FileQuarantine</url>
+            <snapshots>
+             <enabled>true</enabled>
+            </snapshots>
+          </repository>
             </repositories>
           </profile>
         </profiles>
