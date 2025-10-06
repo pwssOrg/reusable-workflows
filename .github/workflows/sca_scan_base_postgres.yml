@@ -83,6 +83,10 @@ jobs:
                       <id>github</id>
                         <url>https://maven.pkg.github.com/pwssOrg/PWSS-DirectoryNav</url>
                       </repository>
+                   <repository>
+                      <id>github</id>
+                        <url>https://maven.pkg.github.com/pwssOrg/PWSS-FileQuarantine</url>
+                      </repository>
                 </repositories>
           </profile>
         </profiles>
