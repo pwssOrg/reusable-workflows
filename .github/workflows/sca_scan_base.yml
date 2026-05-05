@@ -91,7 +91,7 @@ jobs:
 
     - name: Build the project
       working-directory: ${{ inputs.working-path }}
-      run: mvn clean install
+      run: mvn -B -Dgpg.skip=true clean install
 
     - name: Setup Snyk
       uses: snyk/actions/setup@master
