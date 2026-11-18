@@ -20,74 +20,16 @@ jobs:
   snyk-action:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Set up JDK 21
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         distribution: 'temurin'
         java-version: '21'
         cache: 'maven'
 
 
-    - name: Set up environment variables for accessing the private GitHub package repository
-      env:
-        GITHUB_TOKEN: ${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}
-      run: echo "GITHUB_TOKEN is set to access private packages"
-
-    
-    - name: Setup Maven Settings
-      run: |
-        mkdir -p ~/.m2
-        cat <<EOF > ~/.m2/settings.xml
-        <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-        http://maven.apache.org/xsd/settings-1.0.0.xsd">
-        <activeProfiles>
-        <activeProfile>github</activeProfile>
-        </activeProfiles>
-            <profiles>
-              <profile>
-                  <id>github</id>
-                  <repositories>
-                    <repository>
-                      <id>central</id>
-                        <url>https://repo.maven.apache.org/maven2</url>
-                      </repository>
-                    <repository>
-                      <id>github</id>
-                      <url>https://maven.pkg.github.com/pwssOrg/literate-octo-guacamole</url>
-                      <snapshots>
-                        <enabled>true</enabled>
-                      </snapshots>
-                  </repository>
-                <repository>
-                 <id>github</id>
-                 <url>https://maven.pkg.github.com/pwssOrg/PWSS-DirectoryNav</url>
-                 <snapshots>
-                  <enabled>true</enabled>
-                </snapshots>
-              </repository>
-              <repository>
-              <id>github</id>
-             <url>https://https://maven.pkg.github.com/pwssOrg/PWSS-FileQuarantine</url>
-            <snapshots>
-             <enabled>true</enabled>
-            </snapshots>
-          </repository>
-            </repositories>
-          </profile>
-        </profiles>
-          <servers>
-            <server>
-              <id>github</id>
-              <username>${{ secrets.USER_FOR_SNYK }}</username>
-              <password>${{ secrets.READ_PACKAGE_TOKEN_FOR_WORKFLOWS_R }}</password>
-            </server>
-          </servers>
-        </settings>
-        EOF
 
     - name: Build the project
       working-directory: ${{ inputs.working-path }}
