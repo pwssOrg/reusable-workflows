@@ -15,12 +15,6 @@ on:
     secrets:
       SNYK_TOKEN:
         required: true
-      READ_PACKAGE_TOKEN_INPUT:
-        description: 'Used for authentication'
-        required: true
-      USER_FOR_SNYK:
-        description: 'Used for authentication'
-        required: true
 
 jobs:
   snyk-action:
